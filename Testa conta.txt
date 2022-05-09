@@ -1,0 +1,39 @@
+public class TestaConta {
+	public static void main(String[] args) {
+		
+		Conta c1 = new Conta ("","",0);
+		Conta c2 = new Conta ("","",0);
+		
+		c1.setNumero("01");
+		System.out.println("O numero da conta é: " + c1.getNumero());
+		
+		c1.setTitular("Bruna");
+		System.out.println("O nome do titular é: " + c1.getTitular());
+		
+		c1.setSaldo(1500);
+		System.out.println("O saldo da conta é: " + c1.getSaldo() + "\n \n" + "====================================");
+				
+		c2.setNumero("02");
+		System.out.println("O numero da conta é: " + c2.getNumero());
+		
+		c2.setTitular("Cassiana");
+		System.out.println("O nome do titular é: " + c2.getTitular());
+		
+		c2.setSaldo(2900);
+		System.out.println("O saldo da conta é: " + c2.getSaldo()+ "\n \n" + "====================================");
+		
+		System.out.println("O saldo da conta c1 é: " + c1.getSaldo());
+		System.out.println("Será feito um depósito de 300 reais na conta c1:" + "\n");
+		
+		c1.depositar(300);
+				
+		System.out.println("\n \n ==================" + "\nSerá realizado um saque de 100 reais");
+				
+		c1.sacar(100);
+		System.out.println("\n =====================" + "\nSerá realizada uma transferencia para a conta 2 "
+				+ "de 200 reais:");
+		
+		System.out.println("O saldo da conta c2 é: " + c2.getSaldo() + "\n Transferencia sendo feita...");
+				
+		c1.transferir(c2, 200);
+		System.out.println("O novo saldo de c2 é: " + c2.getSaldo());

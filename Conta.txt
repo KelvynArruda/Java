@@ -1,0 +1,66 @@
+public class Conta {
+	
+	private String numero;
+	private String titular;
+	private double saldo;
+	
+public String getNumero() {
+	return numero;
+}
+public void setNumero (String numero) {
+	this.numero = numero;
+}
+
+public String getTitular() {
+	return titular;
+}
+
+public void setTitular (String titular) {
+	this.titular = titular;
+}
+
+public double getSaldo() {
+	return saldo;
+}
+public void setSaldo (double saldo) {
+	this.saldo = saldo;
+}
+
+Conta (String numero, String titular, double saldo){
+}
+
+//   Verificar saldo da conta: //
+
+void verificarSaldo (double saldo) {
+	System.out.println("O valor do saldo é: "+ getSaldo());
+}
+// Sacar dinheiro da conta: //
+
+void sacar(double valorSaque) {
+	if (this.saldo < valorSaque) {
+		System.out.println("Saldo insponível =[");
+	}else {
+		this.saldo = this.saldo - valorSaque;
+		System.out.println("Finalizando seu saque... Aguarde!");
+		System.out.println("Seu saldo agora é: " + this.saldo);
+	}
+}
+// Depositar dinheiro na conta //
+void depositar( double valorDeposito) {
+			this.saldo = this.saldo + valorDeposito;
+		System.out.println("Finalizando seu deposito... Aguarde!");
+		System.out.println("Seu saldo agora é: " + this.saldo);
+}
+
+ // Transferir dinheiro: //
+
+void transferir( Conta contaTransferencia, double valorTransferencia) {
+	if (this.saldo < valorTransferencia) {
+		System.out.println("Saldo insponível =[");
+	}else {
+		saldo = saldo - valorTransferencia;
+		contaTransferencia.saldo = contaTransferencia.saldo + valorTransferencia;
+		System.out.println("Seu saldo agora é: " + this.saldo);
+	}
+}
+}
